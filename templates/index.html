@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body background="test_img.png"> <!-- image path -->
+
+ <div class="login">
+        <h1 style="color:white;">Diabetic Diseases Prediction</h1>
+
+
+    <div
+        class="background-image">
+    </div>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" />
+        <input type="text" name="Glucose" placeholder="Glucose" required="required" />
+		<input type="text" name="Blood Pressure" placeholder="Blood Pressure" required="required" />
+		<input type="text" name="SkinThickness" placeholder="SkinThickness" required="required" />
+        <input type="text" name="Insulin" placeholder="Insulin" required="required" />
+        <input type="text" name="BMI" placeholder="BMI" required="required" />
+        <input type="text" name="Diabetes Pedigree Function" placeholder="Diabetes Pedigree Function" required="required" />
+        <input type="text" name="Age" placeholder="Age" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Result</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+
+</html>
